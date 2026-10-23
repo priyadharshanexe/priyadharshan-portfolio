@@ -297,13 +297,13 @@ section[id] {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 0;
   background: radial-gradient(ellipse at 50% 42%, #202020 0%, #111 65%);
   border: 1px solid #292929;
   border-radius: 16px;
-  width: 80%;
-  max-width: 440px;
-  aspect-ratio: 4 / 5;
+  width: 94%;
+  max-width: 560px;
+  aspect-ratio: 1400 / 787;
   overflow: hidden;
 }
 
