@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" fill="none">
+  <title>Baymax</title>
+  <desc>A friendly white Baymax standing with a gentle wave, softly shaded in monochrome.</desc>
+  <defs>
+    <linearGradient id="body" x1="150" y1="220" x2="355" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/><stop offset=".5" stop-color="#f0f1f2"/><stop offset="1" stop-color="#b8bdc3"/>
+    </linearGradient>
+    <linearGradient id="limb" x1="145" y1="350" x2="190" y2="535" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8f9fa"/><stop offset="1" stop-color="#b9bec5"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="340" y1="200" x2="410" y2="310" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/><stop offset="1" stop-color="#c6cbd0"/>
+    </linearGradient>
+    <radialGradient id="head" cx="0" cy="0" r="1" gradientTransform="translate(218 147) rotate(75) scale(92 130)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/><stop offset=".64" stop-color="#f5f6f7"/><stop offset="1" stop-color="#c8cdd2"/>
+    </radialGradient>
+    <radialGradient id="shadow"><stop stop-color="#000" stop-opacity=".65"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="242" cy="542" rx="153" ry="27" fill="url(#shadow)"/>
+  <!-- Legs tucked beneath the soft body. -->
+  <path d="M167 434c-9 23-15 56-12 77 2 19 18 28 40 28 22 0 33-10 34-27l5-65-67-13Z" fill="url(#limb)"/>
+  <path d="m252 445 3 66c1 20 16 29 37 28 23-1 36-12 35-31-1-27-10-54-20-74l-55 11Z" fill="url(#limb)"/>
+  <path d="M164 511c12 8 31 10 47 5M271 517c14 5 31 3 44-3" stroke="#929aa2" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <!-- Relaxed left arm and raised right arm. -->
+  <path d="M152 244c-23 1-40 19-49 44-12 33-17 69-13 100 2 15 11 25 25 24 15-1 23-11 24-29 0-26 9-51 24-72 17-24 15-62-11-67Z" fill="url(#limb)"/>
+  <path d="M110 375c-10 4-17 15-16 28 0 16 10 29 21 28 10-1 15-10 14-20 9 1 14-6 12-14-2-10-14-25-31-22Z" fill="url(#limb)"/>
+  <path d="M102 403c2 9 7 14 13 15M112 397c3 7 6 11 11 12" stroke="#9da4ac" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M326 250c14-9 28-5 40-14 13-9 17-29 20-45 3-17 15-25 28-21 16 5 22 20 17 39-6 29-19 59-43 76-19 14-45 22-61 14-16-8-19-37-1-49Z" fill="url(#wave)"/>
+  <path d="M387 193c-9-9-15-18-15-27 0-8 7-12 13-7l10 9-5-31c-1-9 9-13 14-6l9 26 1-26c1-9 11-9 14-1l2 30 6-18c3-8 13-5 13 3 0 16-4 34-12 47-8 13-22 19-35 14l-15-13Z" fill="url(#wave)"/>
+  <path d="m401 177 2 14m12-17 2 16m12-15-2 13" stroke="#aeb5bc" stroke-opacity=".48" stroke-width="2" stroke-linecap="round"/>
+  <!-- Pear-shaped inflatable torso. -->
+  <path d="M188 214c-24 7-46 31-57 66-13 41-24 96-19 131 6 51 48 78 127 79 75 1 120-26 125-74 4-37-8-95-22-136-12-35-33-59-57-66-23-7-73-7-97 0Z" fill="url(#body)"/>
+  <path d="M157 287c-13 29-20 63-22 92" stroke="#fff" stroke-opacity=".65" stroke-width="7" stroke-linecap="round"/>
+  <path d="M139 429c20 30 52 43 100 44 42 1 77-9 99-29" stroke="#a5adb5" stroke-opacity=".24" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="287" cy="281" rx="15" ry="16" fill="#e6e9ec" stroke="#b4bbc2" stroke-width="1.5"/>
+  <path d="M280 281h14m-7-7v14" stroke="#c2c8ce" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Baymax's unmistakable oval face. -->
+  <g transform="rotate(-5 239 178)">
+    <path d="M156 155c6-29 39-46 82-46s77 17 84 46c6 27-9 58-34 69-23 11-74 11-98 0-25-12-40-43-34-69Z" fill="url(#head)"/>
+    <path d="M204 171h70" stroke="#16191c" stroke-width="3.8" stroke-linecap="round"/>
+    <circle cx="203" cy="171" r="7.4" fill="#16191c"/>
+    <circle cx="275" cy="171" r="7.4" fill="#16191c"/>
+    <path d="M184 140c13-9 31-13 51-13" stroke="#fff" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
