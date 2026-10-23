@@ -298,9 +298,8 @@ section[id] {
   justify-content: center;
   align-items: center;
   padding: 0;
-  background: radial-gradient(ellipse at 50% 42%, #202020 0%, #111 65%);
-  border: 1px solid #292929;
-  border-radius: 16px;
+  background: transparent;
+  border: 0;
   width: 80%;
   max-width: 360px;
   aspect-ratio: 9 / 16;
