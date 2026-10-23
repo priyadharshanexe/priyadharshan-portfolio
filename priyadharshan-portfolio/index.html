@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Icon -->
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Priyadharshan's portfolio: Python development, helpdesk data migration, AWS cloud, and DevOps." />
+    <title>Priyadharshan | Python Developer</title>
+  </head>
+  <body>
+    <canvas id="swarm-cursor" aria-hidden="true"></canvas>
+    <header>
+      <div class="logo"><a href="#home">Priyadharshan</a></div>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skill">Skills</a>
+        <a href="#project">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="header-social" aria-label="Social links">
+          <a href="https://github.com/priyadharshanexe" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7.3A5.7 5.7 0 0 0 19.3 4 5.4 5.4 0 0 0 19.1 0S17.8-.4 15 1.5a13.4 13.4 0 0 0-7 0C5.2-.4 3.9 0 3.9 0A5.4 5.4 0 0 0 3.7 4 5.7 5.7 0 0 0 2.2 8c0 5.7 3.5 6.9 6.8 7.3A3.5 3.5 0 0 0 8 18v4"/></svg></a>
+              <a href="https://www.linkedin.com/in/priyadharshanexe/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.01M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
+              <a href="mailto:priyadharshan.exe@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a>
+        </div>
+        <button id="menu" class="hamburger-menu" type="button" aria-label="Open navigation" aria-controls="nav-mobile" aria-expanded="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+      <div id="nav-mobile" class="mobile-nav" inert>
+        <button id="close-mobile" class="close" type="button" aria-label="Close navigation"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <nav aria-label="Mobile navigation">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skill">Skills</a>
+          <a class="nav-link" href="#project">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <div class="mobile-social"><a href="https://github.com/priyadharshanexe" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7.3A5.7 5.7 0 0 0 19.3 4 5.4 5.4 0 0 0 19.1 0S17.8-.4 15 1.5a13.4 13.4 0 0 0-7 0C5.2-.4 3.9 0 3.9 0A5.4 5.4 0 0 0 3.7 4 5.7 5.7 0 0 0 2.2 8c0 5.7 3.5 6.9 6.8 7.3A3.5 3.5 0 0 0 8 18v4"/></svg></a>
+              <a href="https://www.linkedin.com/in/priyadharshanexe/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.01M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
+              <a href="mailto:priyadharshan.exe@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a></div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="content">
+          <svg viewBox="0 0 1000 180" data-aos="fade-down" role="img" aria-label="Dharshan">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle">DHARSHAN</text>
+          </svg>
+          <h1 data-aos="zoom-in-up">
+            I build things that <span>work.</span>
+          </h1>
+          <p class="hero-intro" data-aos="fade-up">
+            Turning ideas into real-world software.
+          </p>
+          <button class="work-link" type="button" data-aos="zoom-out"><span>View My Work</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            About Me
+          </h1>
+          <div class="about-me">
+            <div data-aos="zoom-out-right" data-aos-delay="300" class="profile">
+              <div class="image-box">
+                <img src="assets/images/profile-initials.svg" alt="Priyadharshan initials" />
+              </div>
+            </div>
+
+            <div
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              class="description"
+            >
+              <div class="name-role">
+                <h1>Priyadharshan</h1>
+                <div class="role">
+                  <h2 id="rotating-role" aria-label="Python Backend Developer, API Integration Developer, Data Migration Engineer, Helpdesk Migration Specialist, Python Full Stack Developer, AWS Cloud Engineer, and DevOps Engineer">
+                    <span class="role-window" aria-hidden="true"><span class="role-line">Python Backend Developer</span></span>
+                  </h2>
+                </div>
+              </div>
+              <p>
+                I'm Priyadharshan, a Python Developer focused on backend development, platform integrations, and helpdesk data migration. My professional experience began with DataGrine, where I've been developing a migration platform that helps businesses move their support data between systems.
+                <br /><br />
+                At DataGrine, I've built migrations for Freshdesk, Intercom, Zendesk, and Salesforce. Working across these platforms has given me practical experience with the complexity of connecting different systems and moving business data between them. I'm currently extending this work to Outlook and Gmail migrations.
+               <br /><br />
+                As my first professional project, DataGrine has shaped how I approach software development: understand the requirements, work through integration challenges, and build solutions around the people who depend on them. It has strengthened my interest in backend engineering and the work involved in making separate platforms function together.
+               <br /><br />
+                My technical foundation includes Python, Django, Flask, REST APIs, MySQL, and MongoDB. Alongside my development work, I have hands-on experience with AWS, Docker, and Jenkins, supported by training in Terraform, CloudFormation, and Kubernetes. This gives me a broader understanding of application development, deployment, and infrastructure.
+               <br /><br />
+                I'm continuing to grow as a developer through practical engineering challenges, with a focus on building dependable backend applications and integrations. I'm interested in opportunities where I can contribute this experience, take on greater responsibility, and deepen my technical skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill" class="skill">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            Skill
+          </h1>
+
+          <div class="skill-group">
+            <h2>Python &amp; Web Development</h2>
+            <div class="skills">
+              <div class="skill-box" tabindex="0" role="group" aria-label="Python">
+                <img src="assets/icon/python.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Python</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Django">
+                <img class="icon-monochrome" src="assets/icon/django.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Django</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Flask">
+                <img class="icon-monochrome" src="assets/icon/flask.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Flask</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CherryPy">
+                <img src="assets/icon/code.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CherryPy</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Java">
+                <img src="assets/icon/java.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Java</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="JavaScript">
+                <img src="assets/icon/javascript.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="HTML5">
+                <img src="assets/icon/html5.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>HTML5</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CSS3">
+                <img src="assets/icon/css3.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CSS3</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Bootstrap">
+                <img src="assets/icon/bootstrap.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Bootstrap</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="jQuery">
+                <img src="assets/icon/jquery.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>jQuery</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Flutter">
+                <img src="assets/icon/flutter.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Flutter</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="REST API Design">
+                <img src="assets/icon/api.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>REST API Design</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="ORM">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>ORM</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Authentication &amp; Sessions">
+                <img src="assets/icon/security.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Authentication &amp; Sessions</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h2>Databases &amp; Tools</h2>
+            <div class="skills">
+              <div class="skill-box" tabindex="0" role="group" aria-label="SQL">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>SQL</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="MySQL">
+                <img src="assets/icon/mysql.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>MySQL</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="MongoDB">
+                <img src="assets/icon/mongodb.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>MongoDB</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Relational Schema Design">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Relational Schema Design</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="phpMyAdmin">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>phpMyAdmin</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="VS Code">
+                <img src="assets/icon/vscode.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>VS Code</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Postman">
+                <img src="assets/icon/postman.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Postman</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="XAMPP">
+                <img src="assets/icon/code.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>XAMPP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h2>AWS Cloud &amp; Infrastructure</h2>
+            <div class="skills">
+              <div class="skill-box" tabindex="0" role="group" aria-label="EC2">
+                <img src="assets/icon/aws.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>EC2</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="S3">
+                <img src="assets/icon/aws.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>S3</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="VPC &amp; Subnetting">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>VPC &amp; Subnetting</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="IAM &amp; Policies">
+                <img src="assets/icon/security.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>IAM &amp; Policies</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Security Groups">
+                <img src="assets/icon/security.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Security Groups</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="ELB &amp; Load Balancing">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>ELB &amp; Load Balancing</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Auto Scaling">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Auto Scaling</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="RDS">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>RDS</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CloudFormation">
+                <img src="assets/icon/aws.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CloudFormation</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CloudWatch">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CloudWatch</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CloudTrail">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CloudTrail</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Route 53">
+                <img src="assets/icon/cloud.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Route 53</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="EBS">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>EBS</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="EFS">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>EFS</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Redshift">
+                <img src="assets/icon/database.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Redshift</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CodePipeline">
+                <img src="assets/icon/automation.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CodePipeline</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h2>DevOps &amp; Automation</h2>
+            <div class="skills">
+              <div class="skill-box" tabindex="0" role="group" aria-label="Docker &amp; Docker Desktop">
+                <img src="assets/icon/docker.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Docker &amp; Docker Desktop</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Docker Compose">
+                <img src="assets/icon/docker.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Docker Compose</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Kubernetes (Labs)">
+                <img src="assets/icon/kubernetes.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Kubernetes (Labs)</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Terraform">
+                <img src="assets/icon/terraform.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Terraform</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Jenkins">
+                <img src="assets/icon/jenkins.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Jenkins</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="CI/CD Pipeline Design">
+                <img src="assets/icon/automation.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>CI/CD Pipeline Design</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Git &amp; Git Workflows">
+                <img src="assets/icon/git.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Git &amp; Git Workflows</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="GitHub">
+                <img class="icon-monochrome" src="assets/icon/github.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>GitHub</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Linux">
+                <img src="assets/icon/linux.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Linux</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Shell Scripting">
+                <img src="assets/icon/terminal.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Shell Scripting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h2>Data Migration &amp; Integrations</h2>
+            <div class="skills">
+              <div class="skill-box" tabindex="0" role="group" aria-label="Helpdesk Data Migration">
+                <img src="assets/icon/migration.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Helpdesk Data Migration</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Freshdesk">
+                <img src="assets/icon/freshdesk.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Freshdesk</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Intercom">
+                <img class="icon-monochrome" src="assets/icon/intercom.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Intercom</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Zendesk">
+                <img class="icon-monochrome" src="assets/icon/zendesk.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Zendesk</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Salesforce">
+                <img src="assets/icon/salesforce.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Salesforce</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Outlook (In Progress)">
+                <img src="assets/icon/outlook.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Outlook (In Progress)</span>
+              </div>
+              <div class="skill-box" tabindex="0" role="group" aria-label="Gmail (In Progress)">
+                <img src="assets/icon/gmail.svg" alt="" loading="lazy" width="56" height="56" />
+                <span>Gmail (In Progress)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project" class="project">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            Project
+          </h1>
+
+          <div class="projects">
+            <div data-aos="zoom-in-down" data-aos-delay="300" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="400" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="500" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="300" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="400" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="500" class="card">
+              <img src="assets/images/project-coming-soon.svg" alt="Project coming soon" loading="lazy" />
+
+              <div class="description">
+                <h1>Updating Project Soon</h1>
+                <p>Project details will be shared here soon.</p>
+                <div class="action">
+                  <button class="github-button">GitHub</button>
+                  <button>Demo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="content">
+          <h1 class="title">Contact Me</h1>
+          <div class="contact-layout">
+            <div class="contact-details">
+              <h2>Get In Touch</h2>
+              <p>Have a project in mind or an opportunity to discuss? I'd love to hear from you. Reach out to talk about Python development, platform integrations, or data migration.</p>
+              <address class="contact-list">
+                <a href="mailto:priyadharshan.exe@gmail.com"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span><span class="contact-label">Email</span>priyadharshan.exe@gmail.com</span></a>
+                <a href="tel:+917092052943"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 3 5-3 3a15 15 0 0 0 6 6l3-3 5 3-1 4C10 23 1 14 3 4Z"/></svg><span><span class="contact-label">Phone</span>+91 70920 52943</span></a>
+                <div><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><span class="contact-label">Location</span>India</span></div>
+              </address>
+              <div class="contact-social" aria-label="Connect with me"><a href="https://github.com/priyadharshanexe" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7.3A5.7 5.7 0 0 0 19.3 4 5.4 5.4 0 0 0 19.1 0S17.8-.4 15 1.5a13.4 13.4 0 0 0-7 0C5.2-.4 3.9 0 3.9 0A5.4 5.4 0 0 0 3.7 4 5.7 5.7 0 0 0 2.2 8c0 5.7 3.5 6.9 6.8 7.3A3.5 3.5 0 0 0 8 18v4"/></svg></a>
+              <a href="https://www.linkedin.com/in/priyadharshanexe/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.01M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
+              <a href="mailto:priyadharshan.exe@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a></div>
+            </div>
+            <form id="contact-form" class="contact-form">
+              <label for="contact-name">Your Name</label>
+              <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required maxlength="100" />
+              <label for="contact-email">Your Email</label>
+              <input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required maxlength="254" />
+              <label for="contact-message">Your Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell me about your project or opportunity..." required maxlength="5000" rows="6"></textarea>
+              <button type="submit">Send via Email <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></button>
+              <p class="form-note">Opens a draft in your email app.</p>
+              <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <section class="footer-column" aria-labelledby="footer-heading-0">
+          <div class="footer-heading">
+            <h2 id="footer-heading-0">Skill</h2>
+            <button type="button" class="footer-replay" aria-label="Replay skill falling text"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
+          </div>
+          <div class="falling-text" data-trigger="hover" data-draggable>
+            <div class="falling-text__text" role="list" aria-label="Skill">
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">Backend Development</span>
+              <span class="falling-text__piece" data-piece role="listitem">Helpdesk Data Migration</span>
+              <span class="falling-text__piece" data-piece role="listitem">REST API Design</span>
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">Platform Integrations</span>
+              <span class="falling-text__piece" data-piece role="listitem">Cloud &amp; CI/CD</span>
+            </div>
+          </div>
+        </section>
+        <section class="footer-column" aria-labelledby="footer-heading-1">
+          <div class="footer-heading">
+            <h2 id="footer-heading-1">Technology</h2>
+            <button type="button" class="footer-replay" aria-label="Replay technology falling text"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
+          </div>
+          <div class="falling-text" data-trigger="hover" data-draggable>
+            <div class="falling-text__text" role="list" aria-label="Technology">
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">Python</span>
+              <span class="falling-text__piece" data-piece role="listitem">Django</span>
+              <span class="falling-text__piece" data-piece role="listitem">Flask</span>
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">MySQL</span>
+              <span class="falling-text__piece" data-piece role="listitem">MongoDB</span>
+              <span class="falling-text__piece" data-piece role="listitem">AWS</span>
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">Terraform</span>
+              <span class="falling-text__piece" data-piece role="listitem">Docker</span>
+              <span class="falling-text__piece" data-piece role="listitem">Jenkins</span>
+              <span class="falling-text__piece" data-piece data-highlight role="listitem">Git</span>
+              <span class="falling-text__piece" data-piece role="listitem">GitHub</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="swarm-cursor.js"></script>
+    <script src="rotating-role.js"></script>
+    <script src="assets/vendor/matter.min.js" defer></script>
+    <script src="falling-footer.js" defer></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
