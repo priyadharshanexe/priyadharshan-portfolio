@@ -301,9 +301,9 @@ section[id] {
   background: radial-gradient(ellipse at 50% 42%, #202020 0%, #111 65%);
   border: 1px solid #292929;
   border-radius: 16px;
-  width: 94%;
-  max-width: 560px;
-  aspect-ratio: 1400 / 787;
+  width: 80%;
+  max-width: 380px;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
 }
 
