@@ -19,15 +19,15 @@ The About section highlights my work on DataGrine, including helpdesk migrations
 - Animated name and rotating professional roles.
 - Interactive particle swarm that follows the cursor and responds to controls.
 - Grouped skill cards with technology icons, hover colors, and revealing labels.
-- A continuously moving project carousel with soft edges, local placeholder previews, drag and swipe interaction, keyboard navigation, and a fallback for browsers without WebGL.
+- The original React Bits FlexCarousel with its rise entrance, liquid-edge distortion, drag and wheel scrolling, click-to-focus interaction, animated captions, and keyboard navigation.
 - A Let's Connect section for meeting scheduling, followed by contact details and an email draft form in the footer.
 - Keyboard navigation and reduced-motion support for custom animations.
 
 ## Built with
 
-HTML, CSS, and vanilla JavaScript, with WebGL for the swarm animation, OGL for the project carousel, the Web Animations API for text transitions, and AOS for scroll animations. Technology icons include Devicon assets.
+HTML, CSS, and JavaScript, with React and OGL for the project carousel, WebGL for the swarm animation, the Web Animations API for text transitions, and AOS for scroll animations. Technology icons include Devicon assets.
 
-This is a static website. No build step, package installation, or application server is required.
+This is a static website. The compiled carousel files are committed, so no package installation or build is required to serve it. React is used only for the carousel.
 
 ## Run locally
 
@@ -44,7 +44,20 @@ python -m http.server 5500
 
 Then visit [the local portfolio](http://localhost:5500/priyadharshan-portfolio/).
 
-An internet connection is needed to load the AOS stylesheet and script from their CDN.
+An internet connection is needed for AOS and the Google Calendar booking widget.
+
+## Editing the carousel
+
+The original component and stylesheet live in `src/carousel/`. `src/projects.jsx` supplies the local placeholder images and a fallback for browsers without WebGL. The component uses the original demo defaults, including manual scrolling and click-to-focus; no custom drift, edge masks, or bend limits are applied.
+
+After changing its source, rebuild the static JavaScript and CSS from the repository root:
+
+```sh
+npm ci
+npm run build:carousel
+```
+
+Commit the source changes and generated files together. Netlify can continue serving the `priyadharshan-portfolio` directory with its build command left empty.
 
 ## Project structure
 
@@ -53,17 +66,24 @@ Portfolio/
 ├── README.md
 ├── LICENSE
 ├── portfolio-preview.png                 # Current homepage screenshot
+├── package.json              # Carousel dependencies and build command
+├── package-lock.json
+├── scripts/build-carousel.mjs
+├── src/
+│   ├── projects.jsx          # Portfolio carousel integration
+│   └── carousel/             # Original React Bits component and CSS
 └── priyadharshan-portfolio/
     ├── index.html             # Page content and sections
     ├── style.css              # Layout, styling, and hover effects
     ├── script.js              # Navigation and contact interactions
     ├── swarm-cursor.js        # Interactive particle animation
-    ├── project-carousel.js    # Liquid-edge project gallery
+    ├── project-carousel.js    # Generated carousel bundle
+    ├── project-carousel.css   # Generated carousel styles
+    ├── LICENSE.txt            # Published license notices
     ├── rotating-role.js       # Rotating role text
     └── assets/
         ├── icon/              # Technology and platform icons
-        ├── images/            # Profile and project visuals
-        └── vendor/            # Local third-party scripts
+        └── images/            # Profile and project visuals
 ```
 
 ## Current status
