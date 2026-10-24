@@ -917,127 +917,35 @@ a[href^="mailto:"]:focus-visible svg,
 }
 
 
-footer {
-  width: 100%;
-  border-top: 1px solid #333;
+/* Connection and scheduling */
+.connect { padding: 7rem 0; width: 100%; }
+.connect .container { max-width: 1320px; margin: 0 auto; }
+.connect .title { text-align: center; margin-bottom: 64px; }
+.connect-layout { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(32px,6vw,80px); align-items: center; }
+.connect-copy { min-width: 0; }
+.connect-eyebrow { color: #88cfff; font-size: .9rem; margin-bottom: 20px; }
+.connect-copy h2 { font-size: clamp(2rem,4vw,3.4rem); line-height: 1.15; font-weight: 500; margin-bottom: 28px; }
+.connect-copy > p:not(.connect-eyebrow) { max-width: 440px; margin: 16px 0; color: #bdbdbd; font-size: 1.05rem; line-height: 1.7; }
+.connect-email { display: inline-flex; gap: 12px; align-items: center; margin-top: 20px; color: #88cfff; text-decoration: none; line-height: 1.5; }
+.connect-email:hover { text-decoration: underline; text-underline-offset: 5px; }
+.connect-email:focus-visible { outline: 2px solid #88cfff; outline-offset: 5px; }
+.meeting-calendar { min-width: 0; min-height: 560px; overflow: hidden; border: 1px solid #333; border-radius: 16px; background: #111; }
+.booking-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 24px; }
+.booking-heading h2 { font-size: 1.1rem; font-weight: 500; }
+.booking-heading a { color: #88cfff; font-size: .85rem; text-decoration: none; line-height: 1.5; }
+.booking-heading a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.booking-heading a:focus-visible { outline: 2px solid #88cfff; outline-offset: 4px; }
+.meeting-calendar iframe { display: block; width: 100%; height: 720px; border: 0; background: #fff; color-scheme: light; }
+footer.contact { border-top: 1px solid #292929; scroll-margin-top: 110px; }
+@media (max-width: 900px) {
+  .connect-layout { grid-template-columns: minmax(0,1fr); }
+  .connect-copy { max-width: 600px; }
+  .connect-copy > p:not(.connect-eyebrow) { max-width: 560px; }
 }
-
-footer .footer-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 48px 32px 24px;
-}
-
-.footer-column {
-  min-width: 0;
-}
-
-.footer-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.footer-heading h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.footer-replay {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid #444;
-  border-radius: 50%;
-  background: #111;
-  color: #aaa;
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.footer-replay:hover,
-.footer-replay:focus-visible {
-  color: #88cfff;
-  border-color: #88cfff;
-}
-
-.footer-replay:focus-visible {
-  outline: 2px solid #88cfff;
-  outline-offset: 4px;
-}
-
-.falling-text {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.falling-text__text {
-  width: 100%;
-  padding: 16px;
-  line-height: 1.8;
-  text-align: center;
-  text-wrap: balance;
-  font-size: clamp(1rem, 1.8vw, 1.65rem);
-}
-
-.falling-text__piece {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 4px 6px;
-}
-
-.falling-text__piece[data-highlight] {
-  color: #88cfff;
-}
-
-.falling-text[data-phase] .falling-text__piece {
-  will-change: transform;
-}
-
-.falling-text[data-phase='falling'] .falling-text__piece {
-  cursor: grab;
-  touch-action: none;
-}
-
-.falling-text[data-dragging],
-.falling-text[data-dragging] .falling-text__piece {
-  cursor: grabbing;
-}
-
-@media screen and (max-width: 768px) {
-  footer .footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-    padding: 32px 24px 16px;
-  }
-
-  .falling-text {
-    height: 240px;
-  }
-
-  .falling-text__text {
-    font-size: 1.125rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .footer-replay {
-    display: none;
-  }
+@media (max-width: 768px) {
+  .connect { padding: 4rem 0; }
+  .connect .container { padding: 1rem 24px; }
+  .connect .title { margin-bottom: 40px; }
+  .meeting-calendar { min-height: 520px; }
+  .meeting-calendar iframe { height: 780px; }
 }

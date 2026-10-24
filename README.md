@@ -20,13 +20,12 @@ The About section highlights my work on DataGrine, including helpdesk migrations
 - Interactive particle swarm that follows the cursor and responds to controls.
 - Grouped skill cards with technology icons, hover colors, and revealing labels.
 - A continuously moving project carousel with soft edges, local placeholder previews, drag and swipe interaction, keyboard navigation, and a fallback for browsers without WebGL.
-- Contact details and an email draft form.
-- Interactive falling text in the Skills and Technology footer.
+- A Let's Connect section for meeting scheduling, followed by contact details and an email draft form in the footer.
 - Keyboard navigation and reduced-motion support for custom animations.
 
 ## Built with
 
-HTML, CSS, and vanilla JavaScript, with WebGL for the swarm animation, OGL for the project carousel, the Web Animations API for text transitions, Matter.js for footer physics, and AOS for scroll animations. Technology icons include Devicon assets.
+HTML, CSS, and vanilla JavaScript, with WebGL for the swarm animation, OGL for the project carousel, the Web Animations API for text transitions, and AOS for scroll animations. Technology icons include Devicon assets.
 
 This is a static website. No build step, package installation, or application server is required.
 
@@ -61,7 +60,6 @@ Portfolio/
     ├── swarm-cursor.js        # Interactive particle animation
     ├── project-carousel.js    # Liquid-edge project gallery
     ├── rotating-role.js       # Rotating role text
-    ├── falling-footer.js      # Footer physics and interactions
     └── assets/
         ├── icon/              # Technology and platform icons
         ├── images/            # Profile and project visuals
@@ -74,12 +72,15 @@ The project carousel currently uses six local mockups and displays **Updating Pr
 
 The contact form opens a prefilled draft in the visitor's configured email application. It does not send messages directly; the visitor reviews and sends the draft from their email app.
 
+The Let's Connect section embeds the public Google Calendar appointment schedule for 15-minute calls. Availability, booking confirmation, and Google Meet details are handled by Google Calendar. A direct booking-page link is also available above the calendar.
+
 ## Contact
 
 - **Email:** [priyadharshan.exe@gmail.com](mailto:priyadharshan.exe@gmail.com)
 - **LinkedIn:** [priyadharshanexe](https://www.linkedin.com/in/priyadharshanexe/)
 - **GitHub:** [priyadharshanexe](https://github.com/priyadharshanexe)
 - **Location:** India
+- **Book a call:** [Google Calendar appointment page](https://calendar.app.google/1E68HEknauAzNeWk8)
 
 ## License
 
