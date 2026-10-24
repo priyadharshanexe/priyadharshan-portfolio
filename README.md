@@ -44,7 +44,7 @@ python -m http.server 5500
 
 Then visit [the local portfolio](http://localhost:5500/priyadharshan-portfolio/).
 
-An internet connection is needed for AOS and the Google Calendar booking widget.
+An internet connection is needed for AOS and the external Google Calendar booking page.
 
 ## Editing the carousel
 
@@ -92,7 +92,7 @@ The project carousel currently uses six local mockups and displays **Updating Pr
 
 The contact form opens a prefilled draft in the visitor's configured email application. It does not send messages directly; the visitor reviews and sends the draft from their email app.
 
-The Let's Connect section embeds the public Google Calendar appointment schedule for 15-minute calls. Availability, booking confirmation, and Google Meet details are handled by Google Calendar. A direct booking-page link is also available above the calendar.
+The Let's Connect section uses a custom dark meeting card with a direct link to the 15-minute Google Calendar appointment schedule. Available times, booking confirmation, and Google Meet details are handled on Google Calendar.
 
 ## Contact
 
