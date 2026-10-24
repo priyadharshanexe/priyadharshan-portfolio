@@ -19,7 +19,7 @@ The About section highlights my work on DataGrine, including helpdesk migrations
 - Animated name and rotating professional roles.
 - Interactive particle swarm that follows the cursor and responds to controls.
 - Grouped skill cards with technology icons, hover colors, and revealing labels.
-- A draggable project carousel with a liquid-edge effect, local placeholder previews, keyboard controls, and a fallback for browsers without WebGL.
+- A continuously moving project carousel with soft edges, local placeholder previews, drag and swipe interaction, keyboard navigation, and a fallback for browsers without WebGL.
 - Contact details and an email draft form.
 - Interactive falling text in the Skills and Technology footer.
 - Keyboard navigation and reduced-motion support for custom animations.

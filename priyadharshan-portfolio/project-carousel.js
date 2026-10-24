@@ -206,19 +206,17 @@ const wrapper = document.querySelector('.project-carousel');
 if (wrapper) {
   const container = wrapper.querySelector('.project-carousel__viewport');
   const images = [...wrapper.querySelectorAll('.project-slide')];
-  const dots = [...wrapper.querySelectorAll('[data-project-index]')];
   const items = images.map(image => ({src:image.getAttribute('src'),alt:image.alt,title:'Updating Project Soon'}));
   let active = 0;
   const setActive = index => {
     active = (index + items.length) % items.length;
     images.forEach((image, i) => { image.hidden = i !== active; });
-    dots.forEach((dot,i) => dot.setAttribute('aria-pressed', String(i === active)));
     wrapper.querySelector('.project-counter').textContent = String(active + 1).padStart(2,'0') + ' / ' + String(items.length).padStart(2,'0') + ' · Placeholder';
     wrapper.querySelector('.project-live').textContent = 'Project preview ' + (active + 1) + ' of ' + items.length + '. Details coming soon.';
     wrapper.dataset.active = String(active);
   };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const settingsRef = {current:{...BEND_PRESETS.liquid,intro:reduced?'none':'rise',cardHeight:.64,gap:22,radius:12,fit:'natural',bend:.28,dispersion:.3,squeeze:.08,focusOnClick:false,autoplay:false,interval:6,captureWheel:false}};
+  const settingsRef = {current:{...BEND_PRESETS.liquid,intro:reduced?'none':'rise',cardHeight:.56,gap:22,radius:12,fit:'natural',bend:.28,dispersion:.3,squeeze:.08,focusOnClick:false,autoplay:true,speed:28,captureWheel:false}};
   const engineRef = {current:null};
   const itemsRef = {current:items};
   const callbacksRef = {current:{}};
@@ -322,7 +320,6 @@ if (wrapper) {
     let dirty = true;
     let activeIndex = -1;
     let interactedAt = -Infinity;
-    let autoplayAt = performance.now();
     let hasFocus = false;
     let deform = 0;
     let deformVel = 0;
@@ -683,24 +680,13 @@ if (wrapper) {
         else focus.pending = -1;
       }
 
-      if (
-        s.autoplay &&
-        !reducedMotion &&
-        introState.done &&
-        focus.target === 0 &&
-        focus.t < 0.01 &&
-        !pointer.over &&
-        !pointer.down &&
-        !hasFocus &&
-        mode === 'spring' &&
-        Math.abs(goal - pos) < 1 &&
-        now - interactedAt > 3000 &&
-        now - autoplayAt > s.interval * 1000
-      ) {
-        autoplayAt = now;
-        step(m, 1);
+      const canAutoplay = s.autoplay && !reducedMotion && introState.done &&
+        focus.target === 0 && focus.t < 0.01 && (!pointer.over || pointer.touch) &&
+        !pointer.down && !hasFocus && mode === 'spring';
+      if (canAutoplay) {
+        if (now - interactedAt > 3000) goal += s.speed * dt;
+        animating = true;
       }
-      if (s.autoplay && !reducedMotion) animating = true;
 
       const travel = Math.abs(pos - lastPos) / dt;
       lastPos = pos;
@@ -848,7 +834,9 @@ if (wrapper) {
         const inner = Math.max(4, s.reach * (spanW + spanH) * 0.5);
         lensUniforms.uInner.value = inner;
         lensUniforms.uOuter.value = inner * 1.6;
-        lensUniforms.uFlow.value = s.bend * (spanW + spanH) * 0.45;
+        // Keep the full bent card inside the vertical drawing area.
+        const flowRoom = Math.max(8, ((height - cardH) / 2 - 24) * 0.65);
+        lensUniforms.uFlow.value = Math.min(s.bend * (spanW + spanH) * 0.45, flowRoom);
         lensUniforms.uCurl.value = s.curl === 'rise' ? 1 : s.curl === 'fall' ? -1 : 0;
         lensUniforms.uDispersion.value = s.dispersion * 0.12 * (1 + Math.abs(deform) * liquidAmount * 1.2);
         lensUniforms.uStrength.value = reducedMotion ? 0 : effects.strength * (1 - focusEase);
@@ -1064,9 +1052,14 @@ if (wrapper) {
 
     const onFocus = () => {
       hasFocus = true;
+      wrapper.querySelector('.project-live').setAttribute('aria-live', 'polite');
+      dirty = true;
+      start();
     };
     const onBlur = () => {
       hasFocus = false;
+      wrapper.querySelector('.project-live').setAttribute('aria-live', 'off');
+      start();
     };
     const onVisibility = () => {
       if (document.hidden) { cancelAnimationFrame(raf); raf = 0; } else start();
@@ -1133,9 +1126,6 @@ if (wrapper) {
   const next = () => engineRef.current ? engineRef.current.next() : setActive(active + 1);
   const previous = () => engineRef.current ? engineRef.current.previous() : setActive(active - 1);
   const goTo = index => engineRef.current ? engineRef.current.goTo(index) : setActive(index);
-  wrapper.querySelector('[data-project-next]').addEventListener('click',next);
-  wrapper.querySelector('[data-project-previous]').addEventListener('click',previous);
-  dots.forEach((dot,i) => dot.addEventListener('click',()=>goTo(i)));
   container.addEventListener('keydown',event=>{
     if(engineRef.current) return;
     if(event.key==='ArrowRight'){event.preventDefault();next();}
