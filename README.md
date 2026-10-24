@@ -19,7 +19,7 @@ The About section highlights my work on DataGrine, including helpdesk migrations
 - Animated name and rotating professional roles.
 - Interactive particle swarm that follows the cursor and responds to controls.
 - Grouped skill cards with technology icons, hover colors, and revealing labels.
-- The original React Bits FlexCarousel with its rise entrance, liquid-edge distortion, drag and wheel scrolling, click-to-focus interaction, animated captions, and keyboard navigation.
+- The original React Bits FlexCarousel with its rise entrance, liquid-edge distortion, drag and wheel scrolling, click-to-focus interaction, and keyboard navigation.
 - A Let's Connect section for meeting scheduling, followed by contact details and an email draft form in the footer.
 - Keyboard navigation and reduced-motion support for custom animations.
 
@@ -48,7 +48,7 @@ An internet connection is needed for AOS and the external Google Calendar bookin
 
 ## Editing the carousel
 
-The original component and stylesheet live in `src/carousel/`. `src/projects.jsx` supplies the local placeholder images and a fallback for browsers without WebGL. The component uses the original demo defaults, including manual scrolling and click-to-focus; no custom drift, edge masks, or bend limits are applied.
+The original component and stylesheet live in `src/carousel/`. `src/projects.jsx` supplies the local placeholder images and a fallback for browsers without WebGL. The component preserves the original manual scrolling, distortion, and click-to-focus behavior. Larger landscape previews adapt to the viewport; captions and counters are disabled so the animation displays images only. No custom drift, edge masks, or bend limits are applied.
 
 After changing its source, rebuild the static JavaScript and CSS from the repository root:
 

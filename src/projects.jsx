@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useLayoutEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import FlexCarousel from './carousel/FlexCarousel.jsx';
 
 const stage = document.querySelector('.project-stage');
 const images = [...stage.querySelectorAll('.project-slide')];
-const items = images.map((image, index) => ({
+const items = images.map(image => ({
   src: image.getAttribute('src'),
-  alt: image.alt,
-  title: `Project preview ${String(index + 1).padStart(2, '0')}`,
-  subtitle: 'Details coming soon'
+  alt: image.alt
 }));
 
 function enableFallback() {
@@ -56,16 +54,32 @@ try {
   gl?.getExtension('WEBGL_lose_context')?.loseContext();
 } catch { /* Keep the accessible image fallback. */ }
 
-if (supported) {
-  createRoot(document.getElementById('project-gallery')).render(
-    <CarouselBoundary>
+function ProjectGallery() {
+  const [cardHeight, setCardHeight] = useState(0.65);
+  useLayoutEffect(() => {
+    const resize = () => setCardHeight(Math.min(0.65, stage.clientWidth * 0.88 / 1.5 / stage.clientHeight));
+    const observer = new ResizeObserver(resize);
+    observer.observe(stage);
+    resize();
+    return () => observer.disconnect();
+  }, []);
+  return (
       <FlexCarousel
         items={items}
+        cardHeight={cardHeight}
+        captions={false}
         onChange={index => {
           stage.classList.add('is-enhanced');
           stage.dataset.active = String(index);
         }}
       />
+  );
+}
+
+if (supported) {
+  createRoot(document.getElementById('project-gallery')).render(
+    <CarouselBoundary>
+      <ProjectGallery />
     </CarouselBoundary>
   );
 } else {
