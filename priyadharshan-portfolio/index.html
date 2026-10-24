@@ -246,25 +246,19 @@
             <a class="connect-email" href="#contact">Prefer email? Send me a message <span aria-hidden="true">↗</span></a>
           </div>
           <div id="meeting-calendar" class="meeting-calendar" role="region" aria-label="Schedule a meeting with Priyadharshan">
-            <div class="meeting-topline"><span>A conversation, a starting point.</span><span class="meeting-number" aria-hidden="true">01 / CONNECT</span></div>
-            <div class="meeting-art" aria-hidden="true">
-              <div class="meeting-orbit"></div>
-              <div class="meeting-calendar-mark">
-                <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="18" width="56" height="52" rx="12"/><path d="M25 10v16M55 10v16M12 36h56"/><path class="meeting-check" d="m29 52 8 8 16-17"/></svg>
-              </div>
-              <span class="meeting-art-label">Hello. Let's build something.</span>
+            <div class="calendar-header"><div><p class="calendar-eyebrow">LET'S MAKE TIME</p><h2>A conversation away.</h2></div><span class="calendar-duration">15 min &middot; Google Meet</span></div>
+            <div class="calendar-body">
+              <div class="calendar-toolbar"><h3 id="calendar-month" aria-live="polite"></h3><div class="calendar-navigation"><button type="button" id="calendar-today">Today</button><button type="button" id="calendar-prev" aria-label="Previous month">&lsaquo;</button><button type="button" id="calendar-next" aria-label="Next month">&rsaquo;</button></div></div>
+              <div class="calendar-weekdays" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+              <div id="calendar-days" class="calendar-days" role="group" aria-labelledby="calendar-month"></div>
+              <div class="calendar-legend"><span><i aria-hidden="true"></i> Today</span><span>Times shown during booking</span></div>
             </div>
-            <div class="meeting-details">
-              <p class="meeting-kicker">YOUR NEXT IDEA STARTS HERE</p>
-              <h2>A little time.<br />A lot of possibility.</h2>
-              <p class="meeting-description">Bring your idea, your questions, or an opportunity. Let's find the next step together.</p>
-              <div class="meeting-meta">
-                <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15 minutes</span>
-                <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="m15 10 6-3v10l-6-3"/></svg>Google Meet</span>
-              </div>
-              <a class="meeting-book" href="https://calendar.app.google/1E68HEknauAzNeWk8" target="_blank" rel="noopener noreferrer"><span>Choose a time</span><span aria-hidden="true">↗</span></a>
-              <p class="meeting-note">View available times on Google Calendar <span aria-hidden="true">↗</span></p>
+            <div class="calendar-booking">
+              <div class="calendar-selection"><span class="calendar-selection-label">YOUR PREFERRED DATE</span><p id="calendar-selection" aria-live="polite">Pick a date to get started</p></div>
+              <a class="meeting-book" href="https://calendar.app.google/1E68HEknauAzNeWk8" target="_blank" rel="noopener noreferrer"><span>Check availability</span><span aria-hidden="true">&#8599;</span></a>
+              <p class="meeting-note">Choose your final date and time on Google Calendar. A highlighted date here does not indicate availability.</p>
             </div>
+            <noscript><p class="calendar-noscript">Use the booking link to view available times.</p></noscript>
           </div>
         </div>
       </div>
@@ -307,6 +301,7 @@
     <script src="swarm-cursor.js"></script>
     <script src="project-carousel.js" defer></script>
     <script src="rotating-role.js"></script>
+    <script src="meeting-calendar.js" defer></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
