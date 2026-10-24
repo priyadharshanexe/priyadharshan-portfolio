@@ -406,6 +406,19 @@ section[id] {
   max-width: 960px;
 }
 
+.skill .container .content {
+  gap: 48px;
+}
+
+.skill-note {
+  max-width: 680px;
+  margin: 20px auto 0;
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .skill .container .content .skill-group h2 {
   margin-bottom: 24px;
   text-align: center;
@@ -414,7 +427,7 @@ section[id] {
 }
 
 .skill .container .content .skills {
-  --skill-columns: 7;
+  --skill-columns: 6;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -844,7 +857,7 @@ a[href^="mailto:"]:focus-visible svg,
 
 @media screen and (max-width: 1200px) {
   .skill .container .content .skills {
-    --skill-columns: 4;
+    --skill-columns: 3;
   }
 }
 
