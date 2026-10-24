@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
-  <rect width="640" height="360" rx="12" fill="#111"/>
-  <rect x="1" y="1" width="638" height="358" rx="11" stroke="#333" stroke-width="2"/>
-  <rect x="268" y="72" width="104" height="80" rx="12" stroke="#88cfff" stroke-width="2"/>
-  <path d="m301 98-14 14 14 14m38-28 14 14-14 14m-14-33-10 46" stroke="#88cfff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="320" y="221" fill="#fff" font-family="Georgia, serif" font-size="34" text-anchor="middle">Coming Soon</text>
-  <text x="320" y="259" fill="#aaa" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">New projects are on the way</text>
-</svg>

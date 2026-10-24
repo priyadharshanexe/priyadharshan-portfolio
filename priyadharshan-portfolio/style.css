@@ -523,131 +523,72 @@ section[id] {
   }
 }
 
-.project .container .content .projects {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.project .container { padding-inline: 0; }
+.project .container .content { gap: 24px; }
+.project-carousel { width: 100%; min-width: 0; }
+.project-carousel__viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 38vw, 520px);
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+}
+.project-carousel__viewport[data-dragging] { cursor: grabbing; }
+.project-carousel__viewport:focus-visible { outline: 2px solid #88cfff; outline-offset: -4px; }
+.project-carousel__viewport canvas { position: absolute; inset: 0; }
+.project-fallback { height: 100%; display: flex; justify-content: center; align-items: center; padding: 24px; }
+.project-fallback img { width: min(100%, 560px); height: 100%; object-fit: contain; }
+.project-fallback img[hidden] { display: none; }
+.is-enhanced .project-fallback { display: none; }
+.project-carousel__controls { display: flex; justify-content: center; align-items: center; gap: 24px; margin: 0 0 22px; }
+.project-arrow {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 85%;
-}
-
-.project .container .content .projects .card {
-  padding: 16px;
-  border: 2px solid #fff;
-  border-radius: 12px;
-  height: 450px;
-}
-
-.project .container .content .projects .card img {
-  width: 100%;
-  height: 50%;
-}
-
-.project .container .content .projects .card img[src$="project-coming-soon.svg"] {
-  object-fit: contain;
-  background-color: #111;
-  border-radius: 8px;
-}
-
-.project .container .content .projects .card .description {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  height: 50%;
-}
-
-.project .container .content .projects .card .description h1 {
-  font-weight: bold;
-  font-size: 28px;
-}
-
-.project .container .content .projects .card .description p {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: justify;
-}
-
-.project .container .content .projects .card .description .action {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-}
-
-.project .container .content .projects .card .description .action button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #4a4a4a;
+  border-radius: 50%;
+  background: #101010;
+  color: #eee;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border: 2px solid #fff;
-  border-radius: 12px;
-  background: transparent;
-  color: #fff;
-  width: 25%;
-  transition: 0.3s linear;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.project-arrow:hover { color: #88cfff; border-color: #88cfff; background: #171c21; }
+.project-dots { display: flex; align-items: center; }
+.project-dot { position: relative; width: 28px; height: 44px; border: 0; background: transparent; cursor: pointer; }
+.project-dot::after { content: ''; display: block; width: 6px; height: 6px; margin: auto; border-radius: 50%; background: #555; transition: background .2s, transform .2s; }
+.project-dot[aria-pressed="true"]::after { background: #88cfff; transform: scale(1.5); }
+.project-arrow:focus-visible, .project-dot:focus-visible { outline: 2px solid #88cfff; outline-offset: 3px; }
+.project-caption { padding: 0 24px; text-align: center; }
+.project-counter { color: #a8a8a8; font-size: .85rem; letter-spacing: .08em; font-variant-numeric: tabular-nums; }
+.project-caption h2 { margin-top: 12px; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; }
+.project-caption > p { margin: 12px auto 0; max-width: 560px; color: #bdbdbd; font-size: 1rem; line-height: 1.6; }
+.project-actions { display: flex; justify-content: center; gap: 16px; margin-top: 22px; }
+.project-actions button { min-height: 44px; padding: 10px 20px; border: 1px solid #555; border-radius: 10px; color: #aaa; background: transparent; font: inherit; }
+.project-actions .github-button { border-color: #507388; }
+.project-actions button:disabled { cursor: not-allowed; }
+.project-caption > .project-help { margin-top: 24px; font-size: .85rem; color: #999; }
+.project-live { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 600px) {
+  .project-carousel__viewport { height: 330px; }
+  .project-carousel__controls { gap: 8px; }
+  .project-dot { width: 32px; }
+  .project-caption { padding-inline: 24px; }
+}
+@media (max-width: 450px) {
+  .project-carousel__controls { display: grid; grid-template-columns: 44px 44px; gap: 4px 20px; }
+  .project-dots { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
+  .project-dot { width: 44px; }
+  [data-project-previous] { grid-column: 1; grid-row: 1; }
+  [data-project-next] { grid-column: 2; grid-row: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-arrow, .project-dot::after { transition: none; }
 }
 
-.project .container .content .projects .card .description .action button:hover {
-  background: #fff;
-  color: #000;
-  transition: 0.3s linear;
-}
-
-
-
-.project .projects .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
-  border-color: #ff4d5a; /* Optional color highlight */
-}
-
-.project .projects .card img {
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project .projects .card:hover img {
-  transform: scale(1.05);
-}
-
-/* Buttons hover inside card */
-.project .projects .card .action button {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border: 2px solid #fff;
-  border-radius: 12px;
-  background: transparent;
-  color: #fff;
-  width: 25%;
-  transition: all 0.3s ease;
-}
-
-.project .projects .card .action button:hover {
-  background: #fff;
-  color: #000;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-}
-
-.project .container .content .projects .card .action .github-button {
-  border-color: #88cfff;
-}
-
-.project .container .content .projects .card .action .github-button:hover,
-.project .container .content .projects .card .action .github-button:focus-visible {
-  background: #24292f;
-  border-color: #88cfff;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(139, 148, 158, 0.2);
-}
 
 .contact {
   padding: 7rem 0;

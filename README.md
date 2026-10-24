@@ -19,14 +19,14 @@ The About section highlights my work on DataGrine, including helpdesk migrations
 - Animated name and rotating professional roles.
 - Interactive particle swarm that follows the cursor and responds to controls.
 - Grouped skill cards with technology icons, hover colors, and revealing labels.
-- Project cards reserved for upcoming project details.
+- A draggable project carousel with a liquid-edge effect, local placeholder previews, keyboard controls, and a fallback for browsers without WebGL.
 - Contact details and an email draft form.
 - Interactive falling text in the Skills and Technology footer.
 - Keyboard navigation and reduced-motion support for custom animations.
 
 ## Built with
 
-HTML, CSS, and vanilla JavaScript, with WebGL for the swarm animation, the Web Animations API for text transitions, Matter.js for footer physics, and AOS for scroll animations. Technology icons include Devicon assets.
+HTML, CSS, and vanilla JavaScript, with WebGL for the swarm animation, OGL for the project carousel, the Web Animations API for text transitions, Matter.js for footer physics, and AOS for scroll animations. Technology icons include Devicon assets.
 
 This is a static website. No build step, package installation, or application server is required.
 
@@ -59,6 +59,7 @@ Portfolio/
     ├── style.css              # Layout, styling, and hover effects
     ├── script.js              # Navigation and contact interactions
     ├── swarm-cursor.js        # Interactive particle animation
+    ├── project-carousel.js    # Liquid-edge project gallery
     ├── rotating-role.js       # Rotating role text
     ├── falling-footer.js      # Footer physics and interactions
     └── assets/
@@ -69,7 +70,7 @@ Portfolio/
 
 ## Current status
 
-Project cards currently display **Updating Project Soon**. Project descriptions, repository links, and demos will be added when ready.
+The project carousel currently uses six local mockups and displays **Updating Project Soon**. These images are placeholders, not completed project screenshots. Repository and demo buttons remain disabled until real links are added. Replace the preview images and project content when ready.
 
 The contact form opens a prefilled draft in the visitor's configured email application. It does not send messages directly; the visitor reviews and sends the draft from their email app.
 
