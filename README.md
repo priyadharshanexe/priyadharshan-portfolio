@@ -57,7 +57,7 @@ npm ci
 npm run build:carousel
 ```
 
-Commit the source changes and generated files together. Netlify can continue serving the `priyadharshan-portfolio` directory with its build command left empty.
+Commit the source changes and generated files together. GitHub Actions publishes the `priyadharshan-portfolio` directory to GitHub Pages whenever changes are pushed to `main`. The prebuilt carousel assets are checked in, so deployment does not need an npm build.
 
 ## Project structure
 
@@ -92,7 +92,7 @@ The project carousel currently uses six local mockups and displays **Updating Pr
 
 The contact form opens a prefilled draft in the visitor's configured email application. It does not send messages directly; the visitor reviews and sends the draft from their email app.
 
-The Let's Connect section uses a compact white monthly calendar inside a navy panel inspired by the DataGrine contact page, with month navigation, today highlighting, preferred-date selection, and keyboard controls. The calendar is a date planner, not a live availability feed; visitors choose their final date and time on the linked 15-minute Google Calendar appointment page. Booking confirmation and Google Meet details are handled by Google Calendar.
+The Let's Connect section uses a compact dark monthly calendar using the portfolio's monochrome colors and light blue accents, with month navigation, today highlighting, preferred-date selection, and keyboard controls. The calendar is a date planner, not a live availability feed; visitors choose their final date and time on the linked 15-minute Google Calendar appointment page. Booking confirmation and Google Meet details are handled by Google Calendar.
 
 ## Contact
 
@@ -109,3 +109,9 @@ Copyright (c) 2026 M. Priyadharshan. See [LICENSE](LICENSE) for the portfolio's 
 
 
 
+
+## Hosting
+
+Live portfolio: https://priyadharshanexe.github.io/priyadharshan-portfolio/
+
+GitHub Pages uses the `.github/workflows/pages.yml` workflow. In repository Settings > Pages, the publishing source is GitHub Actions. Push changes to `main` to publish automatically; the workflow can also be run manually from the Actions tab.
