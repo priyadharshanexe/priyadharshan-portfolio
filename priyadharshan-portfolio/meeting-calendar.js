@@ -40,7 +40,6 @@
       }
       button.addEventListener('click', () => {
         selected = date;
-        root.querySelector('#calendar-selection').textContent = format(date);
         render(day);
       });
       button.addEventListener('keydown', event => {
