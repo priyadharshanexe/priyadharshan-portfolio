@@ -48,7 +48,7 @@ An internet connection is needed for AOS and the external Google Calendar bookin
 
 ## Editing the carousel
 
-The original component and stylesheet live in `src/carousel/`. `src/projects.jsx` supplies the local placeholder images and a fallback for browsers without WebGL. The component preserves the original manual scrolling, distortion, and click-to-focus behavior. Larger landscape previews adapt to the viewport; captions and counters are disabled so the animation displays images only. No custom drift, edge masks, or bend limits are applied.
+The original component and stylesheet live in `src/carousel/`. `src/projects.jsx` supplies the local placeholder images and a fallback for browsers without WebGL. The component preserves the original manual scrolling, distortion, and click-to-focus behavior. Larger landscape previews adapt to the viewport; project details follow the active image and sit directly beneath its center preview. Counters remain hidden, and images contain no labels. A caption-rendering hook leaves the original scrolling and shader behavior intact. No custom drift, edge masks, or bend limits are applied.
 
 After changing its source, rebuild the static JavaScript and CSS from the repository root:
 
@@ -71,7 +71,7 @@ Portfolio/
 ├── scripts/build-carousel.mjs
 ├── src/
 │   ├── projects.jsx          # Portfolio carousel integration
-│   └── carousel/             # Original React Bits component and CSS
+│   └── carousel/             # React Bits component, caption hook, and CSS
 └── priyadharshan-portfolio/
     ├── index.html             # Page content and sections
     ├── style.css              # Layout, styling, and hover effects

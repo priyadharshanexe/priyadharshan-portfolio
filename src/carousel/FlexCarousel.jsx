@@ -279,6 +279,7 @@ const FlexCarousel = ({
   autoplay = false,
   interval = 4,
   captions = true,
+  renderCaption,
   captureWheel = true,
   onChange,
   onSelect,
@@ -1250,6 +1251,7 @@ const FlexCarousel = ({
     >
       {captions && current && revealed && (
         <div className="flex-carousel__caption" aria-hidden="true">
+          {renderCaption ? renderCaption(current, active, focusOpen) : <>
           <span key={active} className="flex-carousel__title">
             {current.title || current.alt}
             {current.subtitle && <span className="flex-carousel__subtitle">{current.subtitle}</span>}
@@ -1259,6 +1261,7 @@ const FlexCarousel = ({
             <span className="flex-carousel__slash">/</span>
             <span>{String(list.length).padStart(2, '0')}</span>
           </span>
+          </>}
         </div>
       )}
       <div className="flex-carousel__live" aria-live="polite" aria-atomic="true">

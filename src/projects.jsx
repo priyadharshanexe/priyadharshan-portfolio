@@ -6,7 +6,9 @@ const stage = document.querySelector('.project-stage');
 const images = [...stage.querySelectorAll('.project-slide')];
 const items = images.map(image => ({
   src: image.getAttribute('src'),
-  alt: image.alt
+  alt: image.alt,
+  title: image.dataset.title || 'Updating Project Soon',
+  subtitle: image.dataset.description || 'Project details, source code, and demos will be shared here soon.'
 }));
 
 function enableFallback() {
@@ -57,7 +59,12 @@ try {
 function ProjectGallery() {
   const [cardHeight, setCardHeight] = useState(0.65);
   useLayoutEffect(() => {
-    const resize = () => setCardHeight(Math.min(0.65, stage.clientWidth * 0.88 / 1.5 / stage.clientHeight));
+    const resize = () => {
+      // Keep the original image size while the taller canvas accommodates the liquid bend.
+      const baseHeight = Math.min(800, Math.max(540, window.innerHeight * 0.75));
+      const imageHeight = Math.min(baseHeight * 0.65, stage.clientWidth * 0.88 / 1.5);
+      setCardHeight(imageHeight / stage.clientHeight);
+    };
     const observer = new ResizeObserver(resize);
     observer.observe(stage);
     resize();
@@ -67,7 +74,16 @@ function ProjectGallery() {
       <FlexCarousel
         items={items}
         cardHeight={cardHeight}
-        captions={false}
+        renderCaption={(item, index) => (
+          <div key={index} className="project-caption project-caption--active" data-project-index={index}>
+            <h2>{item.title}</h2>
+            <p>{item.subtitle}</p>
+            <div className="project-actions">
+              <button className="github-button" type="button" disabled>GitHub · Soon</button>
+              <button type="button" disabled>Demo · Soon</button>
+            </div>
+          </div>
+        )}
         onChange={index => {
           stage.classList.add('is-enhanced');
           stage.dataset.active = String(index);
