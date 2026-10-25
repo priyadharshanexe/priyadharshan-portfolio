@@ -92,7 +92,7 @@ The project carousel currently uses six local mockups and displays **Updating Pr
 
 The contact form opens a prefilled draft in the visitor's configured email application. It does not send messages directly; the visitor reviews and sends the draft from their email app.
 
-The Let's Connect section uses a custom dark monthly calendar with month navigation, today highlighting, preferred-date selection, and keyboard controls. The calendar is a date planner, not a live availability feed; visitors choose their final date and time on the linked 15-minute Google Calendar appointment page. Booking confirmation and Google Meet details are handled by Google Calendar.
+The Let's Connect section uses a compact white monthly calendar inside a navy panel inspired by the DataGrine contact page, with month navigation, today highlighting, preferred-date selection, and keyboard controls. The calendar is a date planner, not a live availability feed; visitors choose their final date and time on the linked 15-minute Google Calendar appointment page. Booking confirmation and Google Meet details are handled by Google Calendar.
 
 ## Contact
 

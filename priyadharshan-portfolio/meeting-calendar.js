@@ -1,6 +1,7 @@
 (() => {
   const root = document.getElementById('meeting-calendar');
   if (!root) return;
+  root.querySelector('#calendar-timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.replaceAll('_', ' ');
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   let month = new Date(today.getFullYear(), today.getMonth(), 1);
