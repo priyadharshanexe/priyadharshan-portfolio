@@ -4,13 +4,11 @@
   if (!badge || !Element.prototype.animate) return;
 
   const roles = [
+    "Full Stack Software Engineer",
     "Python Backend Developer",
     "API Integration Developer",
-    "Data Migration Engineer",
-    "Helpdesk Migration Specialist",
-    "Python Full Stack Developer",
-    "AWS Cloud Engineer",
-    "DevOps Engineer"
+    "React and TypeScript Developer",
+    "Data Migration Engineer"
   ];
   const windowElement = badge.querySelector(".role-window");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
